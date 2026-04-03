@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+
+.blank {
+  color: rgb(98, 0, 255);
+}
+
+
+/* Light mode placeholder */
+.placeholder-light::placeholder {
+  color: #6c757d;   /* Bootstrap default gray */
+}
+
+/* Dark mode placeholder */
+.placeholder-dark::placeholder {
+  color: #bbbbbb;   /* lighter gray for dark background */
+}
+
