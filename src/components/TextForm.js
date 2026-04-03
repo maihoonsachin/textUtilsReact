@@ -50,10 +50,10 @@ export default function TextForm(props) {
 
     return (
         <>
-            <div className="container" style={{ backgroundColor: props.mode === 'light' ? 'white' : '#609bf3', color: props.mode === 'light' ? 'black' : 'white' }}> 
+            <div className="container" style={{ backgroundColor: props.mode === 'light' ? 'white' : '#042743', color: props.mode === 'light' ? 'black' : 'white' }}> 
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea className="form-control" value={text} style={{ backgroundColor: props.mode === 'light' ? 'white' : '#609bf3', color: props.mode === 'light' ? 'black' : 'white' }} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+                    <textarea className="form-control" value={text} style={{ backgroundColor: props.mode === 'light' ? 'white' : '#042743', color: props.mode === 'light' ? 'black' : 'white' }} onChange={handleOnChange} id="myBox" rows="8"></textarea>
                 </div>
                 <input 
                     type="text"
@@ -62,7 +62,7 @@ export default function TextForm(props) {
                     placeholder="Enter word to search"
                     value={searchWord}
                     onChange={handleSearchChange}
-                    style={{ backgroundColor: props.mode === 'light' ? 'white' : '#609bf3', color: props.mode === 'light' ? 'black' : 'white' }}
+                    style={{ backgroundColor: props.mode === 'light' ? 'white' : '#042743', color: props.mode === 'light' ? 'black' : 'white' }}
                 />
                 <button className="btn btn-primary mx-2 " onClick={handleUpClick}>Convert to Uppercase</button>
                 <button className="btn btn-primary mx-2 " onClick={handleDownClick}>Convert to LowerCase</button>
@@ -70,7 +70,7 @@ export default function TextForm(props) {
                 <button className="btn btn-primary mx-2 " onClick={handleCopy}>Copy Text</button>
                 <button className="btn btn-primary mx-2 " onClick={handleExtraSpaces}>Remove Extra Spaces</button> 
             </div>
-            <div className="container my-2" style={{ backgroundColor: props.mode === 'light' ? 'white' : '#609bf3', color: props.mode === 'light' ? 'black' : 'white' }}>
+            <div className="container my-2" style={{ backgroundColor: props.mode === 'light' ? 'white' : '#042743', color: props.mode === 'light' ? 'black' : 'white' }}>
                 <h2>Your Text Summary</h2>
                 <p> {text.trim().split(" ").length} words and {text.length} characters</p>
                 <p>Average time to read the content: {(text.split(" ").length)*0.008}</p> 
