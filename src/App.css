@@ -50,6 +50,11 @@
 
 /* Dark mode placeholder */
 .placeholder-dark::placeholder {
+  
   color: #bbbbbb;   /* lighter gray for dark background */
+}
+
+.btn:focus {
+  box-shadow: none !important;
 }
 
