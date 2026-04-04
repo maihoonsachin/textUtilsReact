@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import Alert from './components/Alert';
 import { useEffect } from 'react'; 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
