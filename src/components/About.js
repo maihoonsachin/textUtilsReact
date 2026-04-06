@@ -72,12 +72,12 @@ export default function About(){
                 </div>
             </div>
             </div>
-            <div className="container my-3" > 
+            {/* <div className="container my-3" > 
                 <button type="button" onClick={toggleStyle} style={{
                  border: myStyle.color === 'white' ? '1px solid white' : '1px solid black'
                  }} className="btn btn-primary">{btnText}
                 </button>
-            </div>
+            </div> */}
             
         </div>
     )

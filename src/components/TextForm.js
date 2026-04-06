@@ -44,6 +44,7 @@ export default function TextForm(props) {
         var text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        document.getSelection().removeAllRanges();
         props.updateAlert("Text copied to clipboard","success");
     }
 
@@ -70,24 +71,24 @@ export default function TextForm(props) {
                     onChange={handleSearchChange}
                     style={{ backgroundColor: props.mode === 'light' ? 'white' : props.myColor, color: props.mode === 'light' ? 'black' : 'white' }}
                 />
-                <button className="btn btn mx-2 " onClick={handleUpClick} style={{ 
+                <button className="btn btn mx-2 my-2" disabled={text.length === 0} onClick={handleUpClick} style={{ 
                     backgroundColor: props.mode === 'light' ? 'white' : props.myColor, 
                     color: props.mode === 'light' ? 'black' : 'white', 
                     border: `1px solid ${props.mode === 'light' ? 'black' : 'white'}`}}>Convert to Uppercase</button>
-                <button className="btn btn mx-2 " onClick={handleDownClick} style={{ 
+                <button className="btn btn mx-2 my-2" disabled={text.length === 0} onClick={handleDownClick} style={{ 
                     backgroundColor: props.mode === 'light' ? 'white' : props.myColor, 
                     color: props.mode === 'light' ? 'black' : 'white',
                     border: `1px solid ${props.mode === 'light' ? 'black' : 'white'}`}}>Convert to LowerCase</button>
-                <button className="btn btn mx-2 " onClick={findWord} style={{ 
+                <button className="btn btn mx-2 my-2" disabled={text.length === 0} onClick={findWord} style={{ 
                     backgroundColor: props.mode === 'light' ? 'white' : props.myColor, 
                     color: props.mode === 'light' ? 'black' : 'white',
                     border: `1px solid ${props.mode === 'light' ? 'black' : 'white'}`}}>Search</button>
-                <button className="btn btn mx-2 " onClick={handleCopy} style={{ 
+                <button className="btn btn mx-2 my-2" disabled={text.length === 0} onClick={handleCopy} style={{ 
                     backgroundColor: props.mode === 'light' ? 'white' : props.myColor, 
                     color: props.mode === 'light' ? 'black' : 'white',
                     border: `1px solid ${props.mode === 'light' ? 'black' : 'white'}`,
                     border: `1px solid ${props.mode === 'light' ? 'black' : 'white'}`}}>Copy Text</button>
-                <button className="btn btn mx-2 " onClick={handleExtraSpaces} style={{ 
+                <button className="btn btn mx-2 my-2" disabled={text.length === 0} onClick={handleExtraSpaces} style={{ 
                     backgroundColor: props.mode === 'light' ? 'white' : props.myColor, 
                     color: props.mode === 'light' ? 'black' : 'white',
                     border: `1px solid ${props.mode === 'light' ? 'black' : 'white'}`}}>Remove Extra Spaces</button> 
