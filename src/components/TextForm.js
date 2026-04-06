@@ -41,10 +41,10 @@ export default function TextForm(props) {
 
     const handleCopy = () => {
         // console.log("I am copy");
-        var text = document.getElementById("myBox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
-        document.getSelection().removeAllRanges();
+        // var text = document.getElementById("myBox");
+        // text.select();
+        navigator.clipboard.writeText(text);
+        // document.getSelection().removeAllRanges();
         props.updateAlert("Text copied to clipboard","success");
     }
 
@@ -52,6 +52,11 @@ export default function TextForm(props) {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
         props.updateAlert("Extra spaces removed","success");
+    }
+
+    const removeText = () => {
+        setText("");
+        props.updateAlert("Text removed","success");
     }
 
 
@@ -91,12 +96,17 @@ export default function TextForm(props) {
                 <button className="btn btn mx-2 my-2" disabled={text.length === 0} onClick={handleExtraSpaces} style={{ 
                     backgroundColor: props.mode === 'light' ? 'white' : props.myColor, 
                     color: props.mode === 'light' ? 'black' : 'white',
-                    border: `1px solid ${props.mode === 'light' ? 'black' : 'white'}`}}>Remove Extra Spaces</button> 
+                    border: `1px solid ${props.mode === 'light' ? 'black' : 'white'}`}}>Remove Extra Spaces</button>
+
+                <button className="btn btn mx-2 my-2" disabled={text.length === 0} onClick={removeText} style={{ 
+                    backgroundColor: props.mode === 'light' ? 'white' : props.myColor, 
+                    color: props.mode === 'light' ? 'black' : 'white',
+                    border: `1px solid ${props.mode === 'light' ? 'black' : 'white'}`}}>Clear Text</button> 
             </div>
             <div className="container my-2" style={{ backgroundColor: props.mode === 'light' ? 'white' : props.myColor, color: props.mode === 'light' ? 'black' : 'white' }}>
                 <h2>Your Text Summary</h2>
-                <p> {(text.trim() === "") ? 0 : text.trim().split(" ").length} words and {text.length} characters</p>
-                <p>Average time to read the content: {(text.split(" ").length)*0.008}</p> 
+                <p> {(text.trim() === "") ? 0 : text.trim().split(/\s+/).length} words and {text.length} characters</p>
+                <p>Average time to read the content: {(text.trim() === "") ? 0 :(text.split(" ").length)*0.008}</p> 
                 <h2>Preview</h2>
                 <p>{text.length > 0 ? text : "Write something for preview in the above"}</p>
             </div>

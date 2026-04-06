@@ -76,7 +76,7 @@ function App()
         <Alert alert={alert} />
         <div className="container"> 
           <Routes>
-              <Route exact path="/about" element = {<About/>}/>
+              <Route exact path="/about" element = {<About myColor={myColor} mode={mode}/>}/>
 
               <Route exact path="/" 
               element = {<TextForm updateAlert={updateAlert} myColor={myColor} 
